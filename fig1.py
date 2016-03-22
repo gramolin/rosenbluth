@@ -44,6 +44,8 @@ tail_soft = rc.sigma_IntBr_soft(E3=xx, kinematics=kin, ff=ff)
 
 # More accurate description of the radiative tail:
 tail_hard = rc.sigma_IntBr(E3=xx, kinematics=kin, ff=ff)
+tail_hard = tail_hard + (2.*rc.alpha/rc.pi)*(1./(kin.Get_E3() - xx))*(2.*np.log(kin.Get_eta()) + \
+kin.Get_E4()*np.log(kin.Get_x())/kin.Get_p4() - 1.)*rc.sigma_Rosenbluth(E1=1., theta=rc.DegToRad(70.))
 
 # Plotting the curves:
 plt.plot(xx, tail_hard, '-r', linewidth=2, alpha=0.8) # Red solid line
