@@ -18,7 +18,7 @@ plt.rc('ytick', labelsize=19)
 plt.rc('ytick.major', size=9)
 plt.rc('ytick.minor', size=4)
 plt.figure(1, figsize=(7, 5.5))
-plt.subplots_adjust(left=0.14, right=0.97, bottom=0.14, top=0.95)
+plt.subplots_adjust(left=0.16, right=0.98, bottom=0.16, top=0.97)
 plt.semilogy() # Log vertical scale
 
 # The axis labels:

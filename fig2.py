@@ -18,7 +18,7 @@ plt.rc('ytick', labelsize=19)
 plt.rc('ytick.major', size=9)
 plt.rc('ytick.minor', size=4)
 f, axarr = plt.subplots(3, sharex=True, figsize=(7, 15))
-f.subplots_adjust(left=0.14, right=0.97, bottom=0.05, top=0.98, hspace=0.07)
+f.subplots_adjust(left=0.15, right=0.97, bottom=0.06, top=0.98, hspace=0.07)
 
 # The axis labels:
 axarr[0].set_ylabel(r"$G_E / G_D$", fontsize=20)
@@ -198,7 +198,7 @@ for i in range(len(QQ_list)):
   tau = QQ/(2.*rc.m_p)**2
   
   # Epsilon values (arguments to fit):
-  x = df3[df3['QQ']==QQ]['epsilon'].values
+  x = df3[(df3['QQ'] - QQ)**2 < 1e-6]['epsilon'].values
   
   # Calculation of the Mott cross sections:
   sigma_Mott = np.zeros(len(x))
@@ -207,10 +207,10 @@ for i in range(len(QQ_list)):
     sigma_Mott[j] = kin.Get_sigma_Mott()
   
   # Reduced cross sections (values to fit):  
-  y = rc.NbToGeV(df3[df3['QQ']==QQ]['sigma'])*x*(1. + tau)/sigma_Mott
+  y = rc.NbToGeV(df3[(df3['QQ'] - QQ)**2 < 1e-6]['sigma'])*x*(1. + tau)/sigma_Mott
   
   # Uncertainties of the reduced cross sections:
-  e = df3[df3['QQ']==QQ]['error']*y
+  e = df3[(df3['QQ'] - QQ)**2 < 1e-6]['error']*y
   
   # The slope and the intercept of the linear fit:
   slope, intercept = rc.Linear_fitter(x, y, e)
