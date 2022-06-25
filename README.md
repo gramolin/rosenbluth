@@ -1,3 +1,6 @@
+[![arXiv](https://img.shields.io/badge/arXiv-1603.06920-b31b1b.svg)](https://arxiv.org/abs/1603.06920)
+[![DOI:10.1103/PhysRevC.93.055201](https://img.shields.io/badge/DOI-10.1103/PhysRevC.93.055201-0000ff.svg)](https://doi.org/10.1103/PhysRevC.93.055201)
+
 This is the Python code used in the reanalysis of Rosenbluth measurements of the proton form factors described in [arXiv:1603.06920](https://arxiv.org/abs/1603.06920) and [Phys. Rev. C 93, 055201](https://doi.org/10.1103/PhysRevC.93.055201) (please consider citing this paper if you use the code). The [radcorr.py](radcorr.py) library may be useful for calculating radiative corrections in single-arm measurements of unpolarized elastic electron-proton scattering.
 
 ## Dependencies
